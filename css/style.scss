@@ -10,11 +10,12 @@ $color-black: #000000;
 body {
     background-color: $color-white;
     font-family: 'Roboto', sans-serif;
-    max-width: 515px;
+    min-width: 320px;
 }
 .container {
     margin: 0 auto;
     padding: 0 15px;
+    min-width: 320px;
 }
 .hero {
     .container {
@@ -23,8 +24,9 @@ body {
         flex-direction: column;
         align-items: center;
         text-align: center;  
-        height: 100%;
-        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/Rectangle.svg');
+        height: 100vh;
+        width: 100%;
+        background: linear-gradient(rgba(0, 0, 0, 0.49), rgba(0, 0, 0, 0.49)), url('../img/Rectangle.svg');
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
@@ -59,96 +61,96 @@ body {
     }
 }
 main { 
-    max-width: 515px;
+    min-width: 320px;
     & .photo {
         margin: 64px 32px;  
+        display: flex;  
+        flex-wrap: wrap;
+        justify-content: center;
         .container {
             padding: 0;
-            width: 375px;
+            min-width: 320px;
+        }  
+        ul {
+            display: flex;  
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 64px 32px;  
+            & > li {
+                list-style: none;    
+                min-width: 33%;
+                padding-right: 16px;
+                padding-bottom: 16px;
+                .image {
+                    align-self: center;  
+                    width: 100%;                             
+                }
+            }
+        }                
+    }
+    .photo__instagram {
+        padding: 0;
+        margin: 0;  
+        display: flex;  
+        flex-wrap: wrap;
+        justify-content: center;
+        min-width: 320px;  
+        background-color: $color-black;  
+        align-items: center; 
         ul {
             display: flex;
             flex-wrap: wrap;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-                & > li {
-                    list-style: none;
-                    width: 33%;
-                    height: 33%;
-                    .image {
-                        align-self: center;                        
-                    }
+            justify-content: center;
+            width: 100%; 
+            & > li {
+                list-style: none;
+                min-width: 25%;
+                margin: 0;
+                padding: 0;
+                opacity: 1;
+                .image {
+                    align-self: center;
+                    opacity: 0.5; 
+                    width: 100%;
                 }
-            }
-        }              
-    }
-}
-footer {
-    height: 154px;
-    .photo__instagram {
-        .container {
+            }    
+        }
+        .instagram {
             display: flex;
             justify-content: center;
-            flex-direction: column;
-            position: relative;
-            text-align: center;
-            padding: 0;
-            max-width: 515px;  
-            ul {
+            align-items: center;
+            position: absolute;
+           
+            p {
                 display: flex;
-                flex-wrap: wrap;
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;    
-                background-position: center; 
-                & > li {
-                    list-style: none;
-                    width: 25%;
-                    height: 25%;
-                    margin: 0;
-                    padding: 0;
-                    opacity: 2;
-                    .image {
-                        align-self: center;
-                        margin: 0;
-                        padding: 0;
-                    }
-                }
-            }
-            .instagram {
-                p {
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                font-size: 18px;
+                font-family: 'Roboto', sans-serif;
+                line-height: 35px;
+                font-weight: 300;
+                color: $color-white; 
+                & > i {
                     display: flex;
                     justify-content: center;
                     align-items: center;
                     text-align: center;
-                    font-size: 28px;
+                    font-size: 18px;
                     font-family: 'Roboto', sans-serif;
-                    line-height: 35px;
-                    font-weight: 300;
-                    color: $color-white;
-                    position: absolute; 
-                    top: 0;
-                    right: 0;
-                    bottom: 0;
-                    left: 0;                    
-                    & > i {
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        text-align: center;
-                        font-size: 28px;
-                        font-family: 'Roboto', sans-serif;
-                        line-height: 37px;
-                        font-weight: 900;
-                        color: $color-red;
-                        font-style: normal;
-                    }
+                    line-height: 37px;
+                    font-weight: 900;
+                    color: $color-red;
+                    font-style: normal;
                 }
-            }              
-        }  
+            }
+        }               
     }
+}
+footer {
+    height: 100px;
+    background-color: $color-black;
     .footer__end {
-        background-color: $color-black;
         display: flex;
         align-items: center;  
         justify-content: center;
@@ -183,61 +185,30 @@ footer {
     main { 
         min-width: 1440px;
         & .photo {
-            margin: 64px 32px; 
-            width: 1377px;
-            height: 946px;
             .container {
-                display: flex;  
-                min-width: 1440px; 
-            }
-            ul {
-                display: flex;
-                flex-wrap: wrap;
-                & > li {
-                    list-style: none;   
-                    width: 100%;
-                    .image {
-                        align-self: center;
-                        width: 437px;
-                        height: 294px;
-                        padding-bottom: 32px;    
+                min-width: 1440px;
+            }             
+        }
+        .photo__instagram {
+            min-width: 1440px; 
+            .instagram {
+                p {
+                    font-size: 48px;
+                    line-height: 65px; 
+                    & > i {
+                        font-size: 48px;
+                        line-height: 67px;
                     }
                 }
-            }           
+            }               
         }
     }
     .footer {
-        width: 1440px; 
-        .photo__instagram {
-            .container {
-                min-width: 1440px; 
-                background-color: $color-black;   
-                ul {
-                    & > li { 
-                        width: 25%;
-                        height: 25%;
-                        .image {
-                            align-self: center;
-                            margin: 0;
-                            width: 360px;
-                            height: 284px;
-                            padding: 0;  
-                            opacity: 0.5; 
-                        }
-                    }
-                }
-                .instagram {
-                    p {
-                        font-size: 48px;
-                        line-height: 65px; 
-                        & > i {
-                            font-size: 48px;
-                            line-height: 67px;
-                        }
-                    }
-                }              
-            }  
-        }
+        min-width: 1440px; 
+        height: 154px;
+        display: flex;
+        justify-content: center;
+        align-items: center;  
     }
 }
 
